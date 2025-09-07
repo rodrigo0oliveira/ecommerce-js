@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <nav class="relative bg-blue-950 text-gray-300">
+        <nav class="relative bg-black text-gray-300">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center">
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -36,7 +36,8 @@
 
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4 ">
-                                <a href="#" class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Home</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Home</a>
                                 <a href="#"
                                     class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Shop</a>
                                 <a href="#"
@@ -47,20 +48,50 @@
                         </div>
 
                         <div class="hidden sm:block ">
-                            <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]" src="../assets/icons/shopping-cart.png" alt="">
+                            <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]"
+                                src="../assets/icons/shopping-cart.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div id="mobile-menu" class="hidden sm:hidden transition-all duration-300 ">
                     <div class="flex flex-col justify-center items-center space-y-1 px-">
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Home</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Shop</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Coleções</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium  hover:bg-gray-100 hover:text-blue-950">Contato</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Home</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Shop</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Coleções</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium  hover:bg-gray-100 hover:text-blue-950">Contato</a>
                     </div>
                 </div>
             </div>
     </header>
+    <main>
+        <section class="flex h-[600px] w-full">
+            <div class="bg-white flex-1 flex flex-col items-center justify-center gap-10">
+                <h1 class="font-semibold text-5xl ml-5">Find Your <br> Sole Mate <br> with Us</h1>
+                <p class="text-[#E4E4E4] text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod </p>
+                <button class="bg-black h-[50px] text-white py-2 px-4 rounded flex items-center hover:cursor-pointer">
+                    Shop Now
+                </button>
+            </div>
+            <div class=" flex-1 flex flex-col items-center justify-center">
+                <img class="h-[450px]" src="../assets/images/tenis.png" alt="tenis image">
+                <p class="font-bold">Trendy Slick Pro</p>
+                <span>R$2900,00</span>
+            </div>
+        </section>
+        <div class="bg-black h-[100px] w-full flex text-white items-center justify-around">
+            <p>Amazon</p>
+            <p>Ebay</p>
+            <p>Aijo</p>
+            <p>Amazon</p>
+            <p>Ebay</p>
+            <p>Aijo</p>
+        </div>
+    </main>
     <script src="../js/dropdown-menu/index.js"></script>
 </body>
 
