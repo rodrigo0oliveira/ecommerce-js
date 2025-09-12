@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Slick Ecommerce</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen font-sans">
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-2xl font-semibold mb-6 text-center">Login</h1>
+
+        <form id="loginForm" class="flex flex-col gap-4">
+            <div>
+                <label for="email" class="block text-sm font-medium">Email</label>
+                <input type="email" id="email" class="w-full mt-1 p-2 border rounded-md" placeholder="Digite seu email">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium">Senha</label>
+                <input type="password" id="password" class="w-full mt-1 p-2 border rounded-md" placeholder="Digite sua senha">
+            </div>
+
+            <button type="submit" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Entrar</button>
+        </form>
+
+        <p id="errorMsg" class="text-red-500 text-sm mt-3 hidden">Preencha todos os campos!</p>
+    </div>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // não deixa o form recarregar a página
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (email === "" || password === "") {
+                errorMsg.classList.remove("hidden");
+            } else {
+                errorMsg.classList.add("hidden");
+                // Redireciona pra home (index.html)
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
