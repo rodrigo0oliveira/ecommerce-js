@@ -180,6 +180,19 @@
         </div>
     </footer>
 
+    <div id="product-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div class="bg-white p-6 rounded-lg w-[70%] max-w-[600px] h-[80%] text-center relative overflow-auto">
+            <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">✕</button>
+            <img id="modal-product-img" src="" alt="Produto" class="mx-auto mb-4 max-h-[60%] w-full object-contain" />
+            <h2 id="modal-product-name" class="text-xl font-semibold mb-2">Nome do Produto</h2>
+            <p id="modal-product-price" class="text-lg text-gray-700 mb-4">R$ 0,00</p>
+            <p id="modal-product-description" class="text-sm text-gray-500 mb-4">Descrição do produto</p>
+            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+                Adicionar ao carrinho
+            </button>
+        </div>
+    </div>
+
     <script src="../js/dropdown-menu/index.js"></script>
     <script type="module" src="../js/populate-products/index.js"></script>
 </body>
