@@ -21,6 +21,7 @@ const popularProducts = [
         name: "Running canvas",
         price: "2999.00",
         img: "../assets/images/shoes/canva-shoes.png",
+        gender:"masculino",
         description: "Tênis leve em lona para corridas casuais. Fabricado em lona respirável."
 
     },
@@ -29,6 +30,7 @@ const popularProducts = [
         name: "Running casual",
         price: "3999.00",
         img: "../assets/images/shoes/casual.png",
+        gender:"masculino",
         description: "Modelo confortável para uso diário e corridas leves. Fabricado em tecido sintético com palmilha macia."
 
     },
@@ -37,9 +39,8 @@ const popularProducts = [
         name: "Casual Nile",
         price: "3999.00",
         img: "../assets/images/shoes/nike.png",
+        gender:"masculino",
         description: "Tênis estiloso, ideal para passeios urbanos. Fabricado em malha leve com detalhes em borracha."
-
-
     }
 
 ];
@@ -51,16 +52,16 @@ allProducts.push(
         id:4,
         name: "Running canvas",
         price: "2999.00",
-        img: "../assets/images/shoes/canva-shoes.png",
-        gender: "masculino",
+        img: "../assets/images/shoes/running-casual.png",
+        gender: "feminino",
         quantity: 10,
         description: "Versão clássica em lona com ótima respirabilidade. Fabricado em lona reforçada."
     },
-    {   
+    {
         id:5,
         name: "Running casual",
         price: "3999.00",
-        img: "../assets/images/shoes/casual.png",
+        img: "../assets/images/shoes/casual-masculino.png",
         gender: "masculino",
         quantity: 15,
         description: "Design moderno e amortecimento para caminhadas longas. Fabricado em tecido sintético e sola de borracha."
@@ -69,7 +70,7 @@ allProducts.push(
         id:6,
         name: "Casual Nile",
         price: "3999.00",
-        img: "../assets/images/shoes/nike.png",
+        img: "../assets/images/shoes/casual-nile.png",
         gender: "feminino",
         quantity: 12,
         description: "Estilo esportivo e versátil para o dia a dia. Fabricado em malha respirável com acabamento em borracha."
@@ -96,7 +97,7 @@ allProducts.push(
         id:9,
         name: "Classic Leather",
         price: "4599.00",
-        img: "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg",
+        img: "../assets/images/shoes/ClassicLeather.png",
         gender: "masculino",
         quantity: 5,
         description: "Modelo clássico em couro, elegante e durável. Fabricado em couro legítimo e sola emborrachada."
@@ -105,7 +106,7 @@ allProducts.push(
         id:10,
         name: "Sporty Flex",
         price: "3799.00",
-        img: "https://images.pexels.com/photos/2529149/pexels-photo-2529149.jpeg",
+        img: "../assets/images/shoes/SportyFlex.png",
         gender: "masculino",
         quantity: 18,
         description: "Tênis esportivo com flexibilidade e conforto. Fabricado em tecido elástico e solado em EVA."
@@ -114,7 +115,7 @@ allProducts.push(
         id:11,
         name: "Urban Runner",
         price: "4299.00",
-        img: "https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg",
+        img: "../assets/images/shoes/UrbanRunner (2).png",
         gender: "feminino",
         quantity: 7,
         description: "Modelo urbano para treinos e estilo casual. Fabricado em Malha esportiva e sola antiderrapante."
@@ -123,7 +124,7 @@ allProducts.push(
         id:12,
         name: "Urban Runner",
         price: "4299.00",
-        img: "https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg",
+        img: "../assets/images/shoes/urban-runner.png",
         gender: "feminino",
         quantity: 9,
         description: "Versão atualizada do Urban Runner com mais durabilidade. Fabricado em Tecido sintético reforçado e sola de borracha."
