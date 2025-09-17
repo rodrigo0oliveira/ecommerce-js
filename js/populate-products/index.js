@@ -152,7 +152,7 @@ allProducts.forEach((product)=>{
 
 });
 
-function cloneProduct(product,containerToAppend){
+function cloneProduct(product){
     const copy = templateProduct.content.cloneNode(true);
     copy.querySelector("h3").textContent = product.name;
     copy.querySelector("img").src = product.img;
