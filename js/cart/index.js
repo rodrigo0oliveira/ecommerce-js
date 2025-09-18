@@ -28,6 +28,7 @@ function addProductToCart(product) {
         });
     }
     saveCart();
+    alert("Produto adicionado ao carrinho!");
 }
 
 function productIsInCart(id) {

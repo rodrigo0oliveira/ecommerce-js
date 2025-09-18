@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -82,7 +82,7 @@
                 <p class="text-gray-500 text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod </p>
                 <button class="bg-black text-white py-2 px-4 rounded flex items-center hover:cursor-pointer">
-                    Shop Now
+                    <a href="#all-products">Shop Now</a>
                 </button>
             </div>
             <div class="flex-1 flex flex-row items-center justify-center gap-10">
@@ -104,14 +104,14 @@
         </div>
     </main>
 
-    <section class="w-full flex flex-col h-[600px] mt-20">
+    <section class="w-full flex flex-col mt-20 mb-10">
         <div class="flex flex-col justify-around gap-10 sm:flex-row">
             <div class="flex flex-col justify-center items-center gap-2 text-center">
                 <span>Our trending shoes</span>
                 <h2 class="font-normal text-2xl">Most Popular Products</h2>
                 <span>Lorem ipsum dolor sit, amet <br> consectetur adipisicing elit</span>
                 <button class="bg-black text-white py-2 px-4 rounded flex items-center hover:cursor-pointer">
-                    Explore
+                    <a href="#all-products">Explore</a>
                 </button>
             </div>
             <div class="flex gap-5 justify-center" id="popular-products">
@@ -138,10 +138,10 @@
     <section>
         <h1 class="text-center text-2xl">― Best Selling ―</h1>
         <div class="flex justify-center mt-10 gap-5">
-            <button class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
+            <button id="button-man"  class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
                 Man
             </button>
-            <button class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
+            <button id="button-woman" class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
                 Woman
             </button>
         </div>
@@ -208,10 +208,9 @@
             <div>
                 <h3 class="text-white font-semibold mb-4">Links</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">Shop</a></li>
-                    <li><a href="#" class="hover:text-white">Coleções</a></li>
-                    <li><a href="checkout.html" class="hover:text-white">Checkout</a></li>
+                    <li><a href="#" class="hover:text-white">Home</a></li>
+                    <li><a href="#all-products" class="hover:text-white">Coleções</a></li>
+                    <li><a href="../html/cart.html" class="hover:text-white">Checkout</a></li>
                 </ul>
             </div>
 
@@ -245,7 +244,7 @@
             <h2 id="modal-product-name" class="text-xl font-semibold mb-2">Nome do Produto</h2>
             <p id="modal-product-price" class="text-lg text-gray-700 mb-4">R$ 0,00</p>
             <p id="modal-product-description" class="text-sm text-gray-500 mb-4">Descrição do produto</p>
-            <button id="addToCart" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+            <button id="modal-addToCart" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
                 Adicionar ao carrinho
             </button>
         </div>
@@ -253,6 +252,7 @@
 
     <script src="../js/dropdown-menu/index.js"></script>
     <script type="module" src="../js/populate-products/index.js"></script>
+    <script type="module" src="../js/filters/index.js"></script>
 </body>
 
 </html>
