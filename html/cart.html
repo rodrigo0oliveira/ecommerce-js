@@ -79,21 +79,35 @@
             <div id="cart-products" class="ml-10 flex-1">
                 <template id="cart-item">
                     <div
-                        class="flex justify-between items-center mb-10 border-2 border-[#ddd] border-solid  p-8 rounded-sm min-w-full ">
+                        class="flex justify-between items-center mb-10 border-2 border-[#ddd] border-solid p-8 rounded-sm min-w-full">
+
                         <p style="flex:1">
-                            <img class="h-20 w-16" id="productImage" src="" >
+                            <img class="h-20 w-16" id="productImage" src="" />
                         </p>
+
                         <p id="productName" style="flex:2"></p>
-                        <p id="productQuantity" style="flex:1; text-align:center;"></p>
-                        <p id="totalProducsPrice"></p>
+
+                        <div class="flex items-center gap-4" style="flex:1; justify-content:center;">
+                            <button id="decreaseBtn" title="Diminuir quantidade" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">➖</button>
+                            <p id="productQuantity" class="w-8 text-center"></p>
+                            <button id="increaseBtn" title="Aumentar quantidade" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">➕</button>
+                        </div>
+
+                        <p id="totalProducsPrice" class="w-20 text-right"></p>
+
+                        <button id="removeBtn" title="Remover produto" class="ml-4 px-3 py-1 bg-red-300 text-white rounded hover:bg-red-600">
+                            ❌
+                        </button>
                     </div>
                 </template>
+
             </div>
             <div id="cep" class="flex-1">
 
             </div>
         </div>
-        <span class="flex justify-between items-center mb-10 border-2 border-[#837d7d] border-solid  p-8 rounded-sm" id="totalCartValue"></span>
+        <span class="flex justify-between items-center mb-10 border-2 border-[#837d7d] border-solid  p-8 rounded-sm"
+            id="totalCartValue"></span>
     </main>
     <script type="module" src="../js/cart/index.js"></script>
 </body>
