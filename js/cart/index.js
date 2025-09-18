@@ -4,7 +4,7 @@ const totalCartValue = document.getElementById("totalCartValue");
 
 
 function getProducts() {
-    return JSON.parse(localStorage.getItem(CART_KEY) || []);
+    return JSON.parse(localStorage.getItem(CART_KEY) || "[]");
 }
 
 function saveCart() {
