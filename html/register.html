@@ -24,7 +24,13 @@
         <p id="errorMsg" class="text-red-500 text-sm mt-3 hidden"></p>
         <p class="text-sm mt-4 text-center">Já tem conta? <a href="login.html" class="text-blue-600 hover:underline">Faça login</a></p>
     </div>
-
+    <div id="custom-message" class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
+        <p id="message-text">Mensagem aqui</p>
+    </div>
+    <script type="module">
+        import Utils from '../js/utils/index.js';
+        window.Utils = Utils;
+    </script>
     <script>
         const form = document.getElementById("registerForm");
         const errorMsg = document.getElementById("errorMsg");
@@ -41,7 +47,6 @@
                 return;
             }
 
-            // Verifica se o e-mail já está cadastrado
             const users = JSON.parse(localStorage.getItem("users") || "[]");
             if (users.some(user => user.email === email)) {
                 errorMsg.classList.remove("hidden");
@@ -49,13 +54,14 @@
                 return;
             }
 
-            // Salva o novo usuário no localStorage
             users.push({ email, password });
             localStorage.setItem("users", JSON.stringify(users));
 
             errorMsg.classList.add("hidden");
-            alert("Cadastro realizado com sucesso!");
-            window.location.href = "login.html";
+            window.Utils.showMessage("Cadastro realizado com sucesso!", "success");
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 1000);
         });
     </script>
 </body>
