@@ -1,4 +1,5 @@
 import { addProductToCart } from "../cart/index.js";
+import Utils from "../utils/index.js";
 
 const modal = document.getElementById("product-modal");
 const modalImg = document.getElementById("modal-product-img");
@@ -137,7 +138,7 @@ function cloneProduct(product) {
     const copy = templateProduct.content.cloneNode(true);
     copy.querySelector("h3").textContent = product.name;
     copy.querySelector("img").src = product.img;
-    copy.querySelector("p").textContent = product.price;
+    copy.querySelector("p").textContent = Utils.formatMoney(parseFloat(product.price));
 
     return copy;
 }
@@ -147,7 +148,7 @@ function cloneModal(copy, product) {
     btn.addEventListener("click", () => {
         modalImg.src = product.img;
         modalName.textContent = product.name;
-        modalPrice.textContent = "R$ " + product.price;
+        modalPrice.textContent = Utils.formatMoney(parseFloat(product.price));
         modalDescription.textContent = product.description;
         modal.classList.remove("hidden");
         modalButton.addEventListener("click",()=>{

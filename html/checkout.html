@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Checkout</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="">
     <header>
         <nav class="relative bg-black text-gray-300">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -39,9 +39,9 @@
 
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4">
-                                <a href="../html/home.html"
+                                <a href="#home"
                                     class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Home</a>
-                                <a href="../html/home.html"
+                                <a href="#all-products"
                                     class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Coleções</a>
                                 <a href="../html/login.html"
                                     class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Login</a>
@@ -51,69 +51,64 @@
                         </div>
 
                         <div class="hidden sm:block">
-                            <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]"
-                                src="../assets/icons/shopping-cart.png" alt="aa">
+                            <a href="../html/cart.html">
+                                <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]"
+                                    src="../assets/icons/shopping-cart.png" alt="aa">
+                            </a>
+
                         </div>
                     </div>
                 </div>
                 <div id="mobile-menu" class="hidden sm:hidden transition-all duration-300">
                     <div class="flex flex-col justify-center items-center space-y-1">
-                        <a href="index.html"
+                        <a href="#home"
                             class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Home</a>
-                        <a href="#"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Shop</a>
-                        <a href="#"
+                        <a href="#all-products"
                             class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Coleções</a>
-                        <a href="login.html"
+                        <a href="../html/login.html"
                             class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Login</a>
-                        <a href="register.html"
+                        <a href="../html/register.html"
                             class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Cadastro</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <main class="flex flex-col items-center justify-center mt-10">
-        <h1 class="mb-10 text-xl">Seu carrinho</h1>
-        <div id="cart-products" class="ml-10">
-            <template id="cart-item">
-                <div
-                    class="flex flex-col items-center text-center mb-10 border-2 border-[#ddd] p-8 rounded-sm gap-4 sm:flex-row">
+    <main id="checkout" class="flex flex-col md:flex-row justify-center items-center mt-25 gap-8 px-4">
 
-                    <div class="flex justify-center items-center h-24">
-                        <img class="h-20 w-16 text-center" id="productImage" src="" />
-                    </div>
+        <div class="w-full md:w-1/2 max-w-md flex flex-col justify-center items-center gap-4">
+            <input id="cep" type="text" placeholder="Digite seu CEP"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <input disabled id="street" type="text" placeholder="Rua"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <input disabled id="city" type="text" placeholder="Cidade"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <input disabled id="state" type="text" placeholder="Estado"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
 
-                    <p id="productName" class="text-center" style="flex:2"></p>
-
-                    <div class="flex justify-center items-center gap-4" style="flex:1; justify-content:center;">
-                        <button id="decreaseBtn" title="Diminuir quantidade"
-                            class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">➖</button>
-
-                        <p id="productQuantity" class="w-8 text-center"></p>
-
-                        <button id="increaseBtn" title="Aumentar quantidade"
-                            class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">➕</button>
-                    </div>
-
-                    <p id="totalProducsPrice" class="w-20 text-center"></p>
-
-                    <button id="removeBtn" title="Remover produto"
-                        class="ml-4 px-3 py-1 bg-red-300 text-white rounded hover:bg-red-600">
-                        ❌
-                    </button>
-                </div>
-            </template>
+            <button id="search-cep" class="bg-slate-600 text-white p-3 rounded-md hover:bg-gray-800 transition mt-4 hover:cursor-pointer">Preencher com o cep</button>
         </div>
-        <div class="flex gap-5">
-            <span class="flex justify-between items-center mb-10 border-2 border-[#837d7d] border-solid  p-8 rounded-sm h-6"
-                id="totalCartValue"></span>
-            <button id="goToCheckout" class="flex justify-between items-center bg-green-400 mb-10 border-2 border-[#837d7d] border-solid p-8 rounded-sm hover:cursor-pointer h-6">
-                Checkout
+
+        <div class="w-full md:w-1/3 max-w-sm border p-6 rounded-md shadow-md flex flex-col gap-4">
+            <h2 class="text-xl font-semibold">Resumo do Pedido</h2>
+            <div class="flex justify-between">
+                <span>Subtotal:</span>
+                <span id="subtotal"></span>
+            </div>
+            <div class="flex justify-between">
+                <span>Frete:</span>
+                <span id="tax"></span>
+            </div>
+            <div class="flex justify-between font-bold text-lg">
+                <span>Total:</span>
+                <span id="total"></span>
+            </div>
+            <buttonm id="finalize" class="bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition mt-4 hover:cursor-pointer text-center">
+                Finalizar Compra
             </button>
         </div>
     </main>
-    <script type="module" src="../js/cart/index.js"></script>
+    <script type="module" src="../js/checkout/index.js"></script>
 </body>
 
 </html>
