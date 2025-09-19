@@ -1,4 +1,8 @@
+import Utils from "../utils/index.js";
+
 const CART_KEY = "CART_KEY";
+const SUBTOTAL_KEY = "SUBTOTAL_KEY";
+
 const templateCartProduct = document.getElementById("cart-item");
 const totalCartValue = document.getElementById("totalCartValue");
 const cartContainer = document.getElementById("cart-products");
@@ -51,7 +55,7 @@ function renderCart() {
         copy.querySelector("#productImage").src = product.image;
         copy.querySelector("#productName").textContent = product.name;
         copy.querySelector("#productQuantity").textContent = product.quantity;
-        copy.querySelector("#totalProducsPrice").textContent = `R$ ${product.quantity * product.price}`
+        copy.querySelector("#totalProducsPrice").textContent = Utils.formatMoney(product.price * product.quantity);
         copy.querySelector("#decreaseBtn").addEventListener("click", () => {
             decreaseQuantity(product);
         });
@@ -67,8 +71,19 @@ function renderCart() {
         cartContainer.append(copy);
     });
 
-    totalCartValue.textContent = `Total R$${sumTotal.toFixed(2)}`;
+    const subTotal = `R$ ${sumTotal.toFixed(2)}`;
+     
+    totalCartValue.textContent = `Total ${subTotal}`;
+    setSubTotal(sumTotal);
 
+}
+
+function setSubTotal(total) {
+    localStorage.setItem(SUBTOTAL_KEY,total);
+}
+
+function getSubTotal(){
+    return Number(localStorage.getItem(SUBTOTAL_KEY));
 }
 
 function decreaseQuantity(product) {
@@ -101,7 +116,11 @@ function updateCartUI() {
 
 document.addEventListener("DOMContentLoaded", () => {
     renderCart();
+
+    document.getElementById("goToCheckout").addEventListener("click",()=>{
+        window.location.href = "../html/checkout.html";
+    })
 });
 
 
-export { addProductToCart };
+export { addProductToCart,getSubTotal };
