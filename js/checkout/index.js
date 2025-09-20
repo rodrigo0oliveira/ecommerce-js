@@ -68,9 +68,21 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
     finalizeBuyBtn.addEventListener("click",()=>{
-    Utils.showMessage("Compra finalizada com sucesso!", "success");
-    })
+        const loggedUser = localStorage.getItem("loggedUser");
+        if (!loggedUser) {
+            Utils.showMessage("Faça Login para continuar!", "error");
+            setTimeout(() => {
+                window.location.href = "../html/login.html";
+            }, 1000);
+            return;
+        }
 
-})
+        localStorage.removeItem("cart");
+        Utils.showMessage("Compra finalizada com sucesso!", "success");
+        setTimeout(() => {
+            window.location.href = "../html/home.html";
+        }, 1000);
+    });
 
-renderSubTotal();
+    renderSubTotal();
+});
