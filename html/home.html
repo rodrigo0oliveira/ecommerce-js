@@ -144,6 +144,11 @@
                 Feminino
             </button>
         </div>
+        <div class="w-full max-w-6xl mx-auto mt-10 px-4 flex justify-center">
+            <input type="text" id="product-name-filter" placeholder="Filtrar por nome..."
+                class="w-full sm:w-1/2 px-5 py-3 text-lg border-2 border-gray-400 rounded-xl shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-400 focus:border-blue-500 text-gray-800 bg-gray-100 placeholder-gray-500" />
+        </div>
+
         <div id="all-products" class="flex flex-row justify-around gap-10 sm:flex-row flex-wrap mt-10 mb-10 ">
 
         </div>
@@ -258,7 +263,8 @@
 
         <script src="../js/dropdown-menu/index.js"></script>
         <script type="module" src="../js/populate-products/index.js"></script>
-        <script type="module" src="../js/filters/index.js"></script>
+        <script type="module" src="../js/filters/gender.js"></script>
+        <script type="module" src="../js/filters/name.js"></script>
 </body>
 
 </html>

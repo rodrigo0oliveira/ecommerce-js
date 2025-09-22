@@ -31,23 +31,38 @@ buttonWoman.addEventListener("click",()=>{
 });
 
 
-function styleSelectButton(button,buttonName){
+function styleSelectButton(button, buttonName) {
     button.style.backgroundColor = "black";
     button.style.color = "white";
     
-    if(buttonName === "man"){
+    if (buttonName === "man") {
         selectButtons.manButton = true;
         selectButtons.womanButton = false;
-        unSelectButton(buttonWoman);
-    }
-    else{
+        unSelectButton(buttonWoman, "woman");
+    } else {
         selectButtons.womanButton = true;
         selectButtons.manButton = false;
-        unSelectButton(buttonMan);
+        unSelectButton(buttonMan, "man");
     }
 }
 
-function unSelectButton(button){
+function unSelectButton(button, buttonName) {
     button.style.backgroundColor = "white";
     button.style.color = "black";
+    button.style.border = "2px solid black";
+    button.style.transition = "all 0.3s";
+
+    if (buttonName === "man") selectButtons.manButton = false;
+    if (buttonName === "woman") selectButtons.womanButton = false;
 }
+
+function unselectBothButtons() {
+    unSelectButton(buttonMan, "man");
+    unSelectButton(buttonWoman, "woman");
+
+    selectButtons.manButton = false;
+    selectButtons.womanButton = false;
+}
+
+export { unselectBothButtons };
+

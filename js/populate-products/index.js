@@ -151,7 +151,7 @@ function cloneModal(copy, product) {
         modalPrice.textContent = Utils.formatMoney(parseFloat(product.price));
         modalDescription.textContent = product.description;
         modal.classList.remove("hidden");
-        modalButton.addEventListener("click",()=>{
+        modalButton.addEventListener("click", () => {
             addProductToCart(product);
         })
     });
@@ -206,11 +206,26 @@ function populateProductsWithGenderFilter(gender) {
     })
 }
 
+function populateProductsWithFilterName(name) {
+    cleanAllProductsContainer();
+    allProducts.forEach((product) => {
+        if (product.name.toLowerCase().includes(name.toLowerCase())) {
+            let copy = cloneProduct(product);
+
+            cloneModal(copy, product);
+            cloneAddCart(copy, product);
+
+            allProductsContainer.appendChild(copy);
+        }
+    })
+}
+
 populatePopularProducts();
 populateAllProductsContainer();
 
 export {
     cleanAllProductsContainer,
     populateAllProductsContainer,
-    populateProductsWithGenderFilter
+    populateProductsWithGenderFilter,
+    populateProductsWithFilterName
 }
