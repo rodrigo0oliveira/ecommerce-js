@@ -13,62 +13,33 @@
 </head>
 
 <body class="">
-    <header>
-        <nav class="relative bg-black text-gray-300">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div class="relative flex h-16 items-center">
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <button id="dropdown-menu" type="button"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 hover:text-gray-900 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                        <div class="flex shrink-0 items-center">
-                            <p class="font-bold hover:cursor-pointer">Slick Ecommerce</p>
+    <header class="fixed w-full z-50 bg-black">
+        <nav class="text-gray-300">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="flex flex-1 items-center justify-between sm:justify-between">
+                        <div class="flex-shrink-0 flex items-center justify-center">
+                            <a href="../html/home.html" class="font-bold text-white text-lg cursor-pointer">Slick
+                                Ecommerce</a>
                         </div>
 
-                        <div class="hidden sm:ml-6 sm:block">
-                            <div class="flex space-x-4">
-                                <a href="#home"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Início</a>
-                                <a href="#all-products"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Coleções</a>
-                                <a href="../html/login.html"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Login</a>
-                                <a href="../html/register.html"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Cadastro</a>
-                            </div>
+                        <div class="hidden sm:flex space-x-6">
+                            <a href="../html/home.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Início</a>
+                            <a href="../html/home.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Coleções</a>
+                            <a href="../html/login.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Login</a>
+                            <a href="../html/register.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Cadastro</a>
                         </div>
 
-                        <div class="hidden sm:block">
+                        <div class="flex items-center">
                             <a href="../html/cart.html">
-                                <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]"
-                                    src="../assets/icons/shopping-cart.png" alt="aa">
+                                <img class="w-6 h-6 mt-1 cursor-pointer hover:scale-110 transition-transform duration-200"
+                                    src="../assets/icons/shopping-cart.png" alt="Carrinho">
                             </a>
-
                         </div>
-                    </div>
-                </div>
-                <div id="mobile-menu" class="hidden sm:hidden transition-all duration-300">
-                    <div class="flex flex-col justify-center items-center space-y-1">
-                        <a href="#home"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Início</a>
-                        <a href="#all-products"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Coleções</a>
-                        <a href="../html/login.html"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Login</a>
-                        <a href="../html/register.html"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Cadastro</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +57,9 @@
             <input disabled id="state" type="text" placeholder="Estado"
                 class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
 
-            <button id="search-cep" class="bg-slate-600 text-white p-3 rounded-md hover:bg-gray-800 transition mt-4 hover:cursor-pointer">Preencher com o cep</button>
+            <button id="search-cep"
+                class="bg-slate-600 text-white p-3 rounded-md hover:bg-gray-800 transition mt-4 hover:cursor-pointer">Preencher
+                com o cep</button>
         </div>
 
         <div class="w-full md:w-1/3 max-w-sm border p-6 rounded-md shadow-md flex flex-col gap-4">
@@ -103,16 +76,18 @@
                 <span>Total:</span>
                 <span id="total"></span>
             </div>
-            <buttonm id="finalize" class="bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition mt-4 hover:cursor-pointer text-center">
+            <buttonm id="finalize"
+                class="bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition mt-4 hover:cursor-pointer text-center">
                 Finalizar Compra
-            </button>
+                </button>
         </div>
     </main>
-    <div id="custom-message" class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
+    <div id="custom-message"
+        class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
         <p id="message-text">Mensagem aqui</p>
     </div>
     <script type="module" src="../js/checkout/index.js"></script>
-        <footer class="bg-black text-gray-300 py-6 mt-12">
+    <footer class="bg-black text-gray-300 py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p class="text-sm">&copy; 2025 Slick Ecommerce. Todos os direitos reservados.</p>
             <div class="flex space-x-4 mt-4 md:mt-0">
