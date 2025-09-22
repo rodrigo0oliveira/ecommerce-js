@@ -1,4 +1,4 @@
-import { getSubTotal } from "../cart/index.js";
+import { CART_KEY, getSubTotal } from "../cart/index.js";
 import Utils from "../utils/index.js";
 const subTotalSpan = document.getElementById("subtotal");
 const searchCepBtn = document.getElementById("search-cep");
@@ -16,13 +16,13 @@ async function fetchCepValues(cep){
             throw new Error("Erro ao buscar cep");
         }
         const data = await response.json();
-        console.log(data);
+        if(data.erro) throw new Error();
         insertDataIntoForm(data);
 
         return data;
 
     } catch (error) {
-        console.error(error.message);
+        Utils.showMessage("CEP não encontrado. Preencha manualmente","error")
     }
 }
 
@@ -58,6 +58,31 @@ function calculateTotalSummary(region){
     document.getElementById("total").textContent = Utils.formatMoney(totalBuy);
 }
 
+function formIsValid() {
+    const inputs = document.querySelectorAll("#cep, #street, #number, #city, #state");
+
+    let allComplete = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            allComplete = false;
+            input.classList.add("border-red-500");
+        } else {
+            input.classList.remove("border-red-500");
+        }
+    });
+
+    if (!allComplete) {
+        Utils.showMessage("Por favor preencha todos os campos!","error");
+        return false;
+    }
+
+    const numberInput = document.getElementById("number");
+    numberInput.focus();
+    return true;
+}
+
+
 document.addEventListener("DOMContentLoaded",()=>{
     searchCepBtn.addEventListener("click",async ()=>{
         const cep = document.getElementById("cep").value;
@@ -68,16 +93,18 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
     finalizeBuyBtn.addEventListener("click",()=>{
-        const loggedUser = localStorage.getItem("loggedUser");
+        if(!formIsValid()) return; 
+        const loggedUser = localStorage.getItem("users");
+        console.log(loggedUser);
         if (!loggedUser) {
             Utils.showMessage("Faça Login para continuar!", "error");
             setTimeout(() => {
                 window.location.href = "../html/login.html";
-            }, 1000);
+            }, 100000);
             return;
         }
 
-        localStorage.removeItem("cart");
+        localStorage.removeItem(CART_KEY);
         Utils.showMessage("Compra finalizada com sucesso!", "success");
         setTimeout(() => {
             window.location.href = "../html/home.html";
