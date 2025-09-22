@@ -39,7 +39,8 @@ async function insertDataIntoForm(data) {
 function cepIsValid(cep){
     const formatedCep = maskCep(cep);
     if(formatedCep.length!=9){
-    Utils.showMessage("O número do CEP precisa ter 8 números e estar formatado (55790-000 ou 55790000)", "error");
+        Utils.showMessage("O número do CEP precisa ter 8 números e estar formatado (55790-000 ou 55790000)", "error");
+        return false;
     }
     return true;
 }
