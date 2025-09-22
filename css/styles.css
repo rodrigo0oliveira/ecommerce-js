@@ -9,4 +9,17 @@ body{
     margin: 0px;
     background-color: var(--backgroundColor);
     font-family: var(--font);
+    
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* empurra o footer pro final da pagina*/
+}
+footer {
+    font-family: var(--font);
 }

@@ -39,9 +39,8 @@ async function insertDataIntoForm(data) {
 function cepIsValid(cep){
     const formatedCep = maskCep(cep);
     if(formatedCep.length!=9){
-        alert("O número do cep precisa ter 8 números e formatado (55790-000  ou 55790000)");
-        return false;
-    }   
+    Utils.showMessage("O número do CEP precisa ter 8 números e estar formatado (55790-000 ou 55790000)", "error");
+    }
     return true;
 }
 
@@ -69,10 +68,21 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
     finalizeBuyBtn.addEventListener("click",()=>{
-        alert("Compra finalizada");
-    })
+        const loggedUser = localStorage.getItem("loggedUser");
+        if (!loggedUser) {
+            Utils.showMessage("Faça Login para continuar!", "error");
+            setTimeout(() => {
+                window.location.href = "../html/login.html";
+            }, 1000);
+            return;
+        }
 
-    
-})
+        localStorage.removeItem("cart");
+        Utils.showMessage("Compra finalizada com sucesso!", "success");
+        setTimeout(() => {
+            window.location.href = "../html/home.html";
+        }, 1000);
+    });
 
-renderSubTotal();
+    renderSubTotal();
+});

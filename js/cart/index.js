@@ -31,7 +31,7 @@ function addProductToCart(product) {
         });
     }
     saveCart();
-    alert("Produto adicionado ao carrinho!");
+    Utils.showMessage("Produto adicionado ao carrinho!", "success");
 }
 
 function productIsInCart(id) {

@@ -22,7 +22,7 @@ const popularProducts = [
     {
         id: 1,
         name: "Running canvas",
-        price: "2999.00",
+        price: "299.00",
         img: "../assets/images/shoes/canva-shoes.png",
         gender: "masculino",
         description: "Tênis leve em lona para corridas casuais. Fabricado em lona respirável."
@@ -31,7 +31,7 @@ const popularProducts = [
     {
         id: 2,
         name: "Running casual",
-        price: "3999.00",
+        price: "399.00",
         img: "../assets/images/shoes/casual.png",
         gender: "masculino",
         description: "Modelo confortável para uso diário e corridas leves. Fabricado em tecido sintético com palmilha macia."
@@ -40,7 +40,7 @@ const popularProducts = [
     {
         id: 3,
         name: "Casual Nile",
-        price: "3999.00",
+        price: "399.00",
         img: "../assets/images/shoes/nike.png",
         gender: "masculino",
         description: "Tênis estiloso, ideal para passeios urbanos. Fabricado em malha leve com detalhes em borracha."
@@ -54,7 +54,7 @@ allProducts.push(
     {
         id: 4,
         name: "Running canvas",
-        price: "2999.00",
+        price: "299.00",
         img: "../assets/images/shoes/running-casual.png",
         gender: "feminino",
         quantity: 10,
@@ -63,7 +63,7 @@ allProducts.push(
     {
         id: 5,
         name: "Running casual",
-        price: "3999.00",
+        price: "399.00",
         img: "../assets/images/shoes/casual-masculino.png",
         gender: "masculino",
         quantity: 15,
@@ -72,7 +72,7 @@ allProducts.push(
     {
         id: 6,
         name: "Casual Nile",
-        price: "3999.00",
+        price: "399.00",
         img: "../assets/images/shoes/casual-nile.png",
         gender: "feminino",
         quantity: 12,
@@ -81,7 +81,7 @@ allProducts.push(
     {
         id: 7,
         name: "Trail Runner",
-        price: "4999.00",
+        price: "499.00",
         img: "https://images.pexels.com/photos/19090/pexels-photo.jpg",
         gender: "masculino",
         quantity: 8,
@@ -90,7 +90,7 @@ allProducts.push(
     {
         id: 8,
         name: "Street Sneaker",
-        price: "3499.00",
+        price: "349.00",
         img: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
         gender: "feminino",
         quantity: 20,
@@ -99,7 +99,7 @@ allProducts.push(
     {
         id: 9,
         name: "Classic Leather",
-        price: "4599.00",
+        price: "459.00",
         img: "../assets/images/shoes/ClassicLeather.png",
         gender: "masculino",
         quantity: 5,
@@ -108,7 +108,7 @@ allProducts.push(
     {
         id: 10,
         name: "Sporty Flex",
-        price: "3799.00",
+        price: "379.00",
         img: "../assets/images/shoes/SportyFlex.png",
         gender: "masculino",
         quantity: 18,
@@ -117,7 +117,7 @@ allProducts.push(
     {
         id: 11,
         name: "Urban Runner",
-        price: "4299.00",
+        price: "429.00",
         img: "../assets/images/shoes/UrbanRunner (2).png",
         gender: "feminino",
         quantity: 7,
@@ -126,7 +126,7 @@ allProducts.push(
     {
         id: 12,
         name: "Urban Runner",
-        price: "4299.00",
+        price: "429.00",
         img: "../assets/images/shoes/urban-runner.png",
         gender: "feminino",
         quantity: 9,
@@ -151,7 +151,7 @@ function cloneModal(copy, product) {
         modalPrice.textContent = Utils.formatMoney(parseFloat(product.price));
         modalDescription.textContent = product.description;
         modal.classList.remove("hidden");
-        modalButton.addEventListener("click",()=>{
+        modalButton.addEventListener("click", () => {
             addProductToCart(product);
         })
     });
@@ -206,11 +206,26 @@ function populateProductsWithGenderFilter(gender) {
     })
 }
 
+function populateProductsWithFilterName(name) {
+    cleanAllProductsContainer();
+    allProducts.forEach((product) => {
+        if (product.name.toLowerCase().includes(name.toLowerCase())) {
+            let copy = cloneProduct(product);
+
+            cloneModal(copy, product);
+            cloneAddCart(copy, product);
+
+            allProductsContainer.appendChild(copy);
+        }
+    })
+}
+
 populatePopularProducts();
 populateAllProductsContainer();
 
 export {
     cleanAllProductsContainer,
     populateAllProductsContainer,
-    populateProductsWithGenderFilter
+    populateProductsWithGenderFilter,
+    populateProductsWithFilterName
 }

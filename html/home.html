@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <header>
-        <nav class="relative bg-black text-gray-300">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div class="relative flex h-16 items-center">
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+    <header class="fixed w-full z-50 bg-black">
+        <nav class="text-gray-300">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="flex items-center sm:hidden">
                         <button id="dropdown-menu" type="button"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 hover:text-gray-900 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
+                            class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 hover:text-gray-900 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
                             <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -32,57 +32,54 @@
                         </button>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                        <div class="flex shrink-0 items-center">
-                            <p class="font-bold hover:cursor-pointer">Slick Ecommerce</p>
+                    <div class="flex flex-1 items-center justify-between sm:justify-between">
+                        <div class="flex-shrink-0 flex items-center justify-center">
+                            <p class="font-bold text-white text-lg cursor-pointer">Slick Ecommerce</p>
                         </div>
 
-                        <div class="hidden sm:ml-6 sm:block">
-                            <div class="flex space-x-4">
-                                <a href="#home"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Home</a>
-                                <a href="#all-products"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Coleções</a>
-                                <a href="../html/login.html"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Login</a>
-                                <a href="../html/register.html"
-                                    class="rounded-md px-3 py-2 text-sm font-normal hover:bg-gray-100 hover:text-blue-950">Cadastro</a>
-                            </div>
+                        <div class="hidden sm:flex space-x-6">
+                            <a href="#home"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Início</a>
+                            <a href="#all-products"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Coleções</a>
+                            <a href="../html/login.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Login</a>
+                            <a href="../html/register.html"
+                                class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Cadastro</a>
                         </div>
 
-                        <div class="hidden sm:block">
+                        <div class="flex items-center">
                             <a href="../html/cart.html">
-                                <img class="mt-2 w-[22px] hover:cursor-pointer hover:w-[23px]"
-                                    src="../assets/icons/shopping-cart.png" alt="aa">
+                                <img class="w-6 h-6 mt-1 cursor-pointer hover:scale-110 transition-transform duration-200"
+                                    src="../assets/icons/shopping-cart.png" alt="Carrinho">
                             </a>
-
                         </div>
                     </div>
                 </div>
-                <div id="mobile-menu" class="hidden sm:hidden transition-all duration-300">
-                    <div class="flex flex-col justify-center items-center space-y-1">
+
+                <div id="mobile-menu" class="hidden sm:hidden mt-2 w-full bg-black">
+                    <div class="flex flex-col items-center space-y-2 py-4">
                         <a href="#home"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Home</a>
+                            class="w-full text-center px-4 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md">Início</a>
                         <a href="#all-products"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Coleções</a>
+                            class="w-full text-center px-4 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md">Coleções</a>
                         <a href="../html/login.html"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Login</a>
+                            class="w-full text-center px-4 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md">Login</a>
                         <a href="../html/register.html"
-                            class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-100 hover:text-blue-950">Cadastro</a>
+                            class="w-full text-center px-4 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md">Cadastro</a>
                     </div>
                 </div>
+
             </div>
         </nav>
     </header>
-
     <main>
-        <section id="home" class="flex h-[600px] w-full">
+        <section id="home" class="flex min-h-[600px] w-full mt-10">
             <div class="bg-white flex-1 flex flex-col items-center justify-center gap-10">
-                <h1 class="font-semibold text-5xl ml-5">Find Your <br> Sole Mate <br> with Us</h1>
-                <p class="text-gray-500 text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod </p>
+                <h1 class="font-semibold text-5xl ml-5">Encontre o <br> Tênis perfeito <br> para você</h1>
+                <p class="text-gray-500 text-sm text-center">Tênis estilosos e confortáveis para todos os momentos.</p>
                 <button class="bg-black text-white py-2 px-4 rounded flex items-center hover:cursor-pointer">
-                    <a href="#all-products">Shop Now</a>
+                    <a href="#all-products">Compre Agora</a>
                 </button>
             </div>
             <div class="flex-1 flex flex-row items-center justify-center gap-10">
@@ -92,26 +89,26 @@
                 <div class="flex flex-col justify-center items-center">
                     <img class="h-[450px]" src="../assets/images/shoes/tenis.png" alt="tenis image">
                     <p class="font-bold">Trendy Slick Pro</p>
-                    <span>R$2900,00</span>
+                    <span>R$290,00</span>
                 </div>
             </div>
         </section>
 
-        <div class="bg-black h-[100px] w-full flex text-white items-center justify-around">
+        <div class="bg-black w-full flex flex-col sm:flex-row items-center justify-around gap-6 sm:gap-0">
             <img src="../assets/images/companies/ebay.png" alt="Ebay">
             <img src="../assets/images/companies/amazon.png" alt="Amazon">
-            <img src="../assets/images/companies/ajio.png" alt="Ajio">
+            <img class="mb-5 sm:mb-0" src="../assets/images/companies/ajio.png" alt="Ajio">
         </div>
     </main>
 
     <section class="w-full flex flex-col mt-20 mb-10">
         <div class="flex flex-col justify-around gap-10 sm:flex-row">
             <div class="flex flex-col justify-center items-center gap-2 text-center">
-                <span>Our trending shoes</span>
-                <h2 class="font-normal text-2xl">Most Popular Products</h2>
-                <span>Lorem ipsum dolor sit, amet <br> consectetur adipisicing elit</span>
+                <span>Os tênis do momento</span>
+                <h2 class="font-normal text-2xl">Produtos mais populares</h2>
+                <span>Descubra os tênis que combinam estilo <br>e conforto para o seu dia a dia.</span>
                 <button class="bg-black text-white py-2 px-4 rounded flex items-center hover:cursor-pointer">
-                    <a href="#all-products">Explore</a>
+                    <a href="#all-products">Explorar</a>
                 </button>
             </div>
             <div class="flex gap-5 justify-center" id="popular-products">
@@ -136,16 +133,23 @@
         </div>
     </section>
     <section>
-        <h1 class="text-center text-2xl">― Best Selling ―</h1>
+        <h1 class="text-center text-2xl">― Mais Vendidos ―</h1>
         <div class="flex justify-center mt-10 gap-5">
-            <button id="button-man"  class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
-                Man
+            <button id="button-man"
+                class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
+                Masculino
             </button>
-            <button id="button-woman" class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
-                Woman
+            <button id="button-woman"
+                class="bg-white text-black py-2 px-4 rounded flex items-center hover:cursor-pointer border">
+                Feminino
             </button>
         </div>
-        <div id="all-products" class="flex flex-col justify-around gap-10 sm:flex-row flex-wrap mt-10 mb-10">
+        <div class="w-full max-w-6xl mx-auto mt-10 px-4 flex justify-center">
+            <input type="text" id="product-name-filter" placeholder="Filtrar por nome..."
+                class="w-full sm:w-1/2 px-5 py-3 text-lg border-2 border-gray-400 rounded-xl shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-400 focus:border-blue-500 text-gray-800 bg-gray-100 placeholder-gray-500" />
+        </div>
+
+        <div id="all-products" class="flex flex-row justify-around gap-10 sm:flex-row flex-wrap mt-10 mb-10 ">
 
         </div>
     </section>
@@ -195,64 +199,72 @@
                 <p class="text-sm font-medium text-gray-900">Maria Oliveira</p>
             </div>
         </div>
-    </section>
+        </section>
 
-    <footer class="bg-black text-gray-300 mt-20">
-        <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <footer class="bg-black text-gray-300 mt-20">
+            <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
 
-            <div>
-                <h3 class="text-white font-semibold mb-4">Slick Ecommerce</h3>
-                <p class="text-sm">Seu e-commerce de confiança. Produtos de qualidade com entrega rápida.</p>
-            </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Slick Ecommerce</h3>
+                    <p class="text-sm">Seu e-commerce de confiança. Produtos de qualidade com entrega rápida.</p>
+                </div>
 
-            <div>
-                <h3 class="text-white font-semibold mb-4">Links</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white">Home</a></li>
-                    <li><a href="#all-products" class="hover:text-white">Coleções</a></li>
-                    <li><a href="../html/cart.html" class="hover:text-white">Checkout</a></li>
-                </ul>
-            </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#all-products" class="hover:text-white">Coleções</a></li>
+                        <li><a href="../html/cart.html" class="hover:text-white">Checkout</a></li>
+                    </ul>
+                </div>
 
-            <div>
-                <h3 class="text-white font-semibold mb-4">Contato</h3>
-                <p class="text-sm">Email: suporte@slick.com</p>
-                <p class="text-sm">Tel: (11) 99999-9999</p>
-                <div class="flex gap-3 mt-3">
-                    <a href="https://facebook.com" target="_blank">
-                        <i class="fab fa-facebook-f w-6 h-6 text-gray-300 hover:text-white"></i>
-                    </a>
-                    <a href="https://x.com" target="_blank">
-                        <i class="fab fa-x-twitter w-6 h-6 text-gray-300 hover:text-white"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                        <i class="fab fa-instagram w-6 h-6 text-gray-300 hover:text-white"></i>
-                    </a>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contato</h3>
+                    <p class="text-sm">Email: suporte@slick.com</p>
+                    <p class="text-sm">Tel: (11) 99999-9999</p>
+                    <div class="flex gap-3 mt-3">
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="fab fa-facebook-f w-6 h-6 text-gray-300 hover:text-white"></i>
+                        </a>
+                        <a href="https://x.com" target="_blank">
+                            <i class="fab fa-x-twitter w-6 h-6 text-gray-300 hover:text-white"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <i class="fab fa-instagram w-6 h-6 text-gray-300 hover:text-white"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <div class="bg-gray-900 text-center py-4 text-sm text-gray-500">
+                © 2025 Slick Ecommerce. Todos os direitos reservados.
+            </div>
+        </footer>
+
+        <div id="product-modal"
+            class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-white p-6 rounded-lg w-[70%] max-w-[600px] h-[80%] text-center relative overflow-auto">
+                <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">✕</button>
+                <img id="modal-product-img" src="" alt="Produto"
+                    class="mx-auto mb-4 max-h-[60%] w-full object-contain" />
+                <h2 id="modal-product-name" class="text-xl font-semibold mb-2">Nome do Produto</h2>
+                <p id="modal-product-price" class="text-lg text-gray-700 mb-4">R$ 0,00</p>
+                <p id="modal-product-description" class="text-sm text-gray-500 mb-4">Descrição do produto</p>
+                <button id="modal-addToCart" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+                    Adicionar ao carrinho
+                </button>
+            </div>
         </div>
 
-        <div class="bg-gray-900 text-center py-4 text-sm text-gray-500">
-            © 2025 Slick Ecommerce. Todos os direitos reservados.
+        <div id="custom-message"
+            class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
+            <p id="message-text">Mensagem aqui</p>
         </div>
-    </footer>
 
-    <div id="product-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div class="bg-white p-6 rounded-lg w-[70%] max-w-[600px] h-[80%] text-center relative overflow-auto">
-            <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">✕</button>
-            <img id="modal-product-img" src="" alt="Produto" class="mx-auto mb-4 max-h-[60%] w-full object-contain" />
-            <h2 id="modal-product-name" class="text-xl font-semibold mb-2">Nome do Produto</h2>
-            <p id="modal-product-price" class="text-lg text-gray-700 mb-4">R$ 0,00</p>
-            <p id="modal-product-description" class="text-sm text-gray-500 mb-4">Descrição do produto</p>
-            <button id="modal-addToCart" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
-                Adicionar ao carrinho
-            </button>
-        </div>
-    </div>
-
-    <script src="../js/dropdown-menu/index.js"></script>
-    <script type="module" src="../js/populate-products/index.js"></script>
-    <script type="module" src="../js/filters/index.js"></script>
+        <script src="../js/dropdown-menu/index.js"></script>
+        <script type="module" src="../js/populate-products/index.js"></script>
+        <script type="module" src="../js/filters/gender.js"></script>
+        <script type="module" src="../js/filters/name.js"></script>
 </body>
 
 </html>
