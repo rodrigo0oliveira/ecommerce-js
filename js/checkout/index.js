@@ -28,12 +28,14 @@ async function fetchCepValues(cep){
 
 async function insertDataIntoForm(data) {
     const street = document.getElementById("street");
+    const number = document.getElementById("number");
     const city = document.getElementById("city");
     const state = document.getElementById("state");
 
+    number.value = "";
     city.value = data.localidade;
-    street.value = data.logradouro;
-    state.value = data.estado;    
+    street.value = data.logradouro || "";
+    state.value = data.uf;
 }
 
 function cepIsValid(cep){
@@ -51,8 +53,8 @@ function maskCep(cep){
     .replace(/(-\d{3})\d+?$/, '$1');
 }
 
-function calculateTotalSummary(region){
-    const tax = region === "Sudeste" ? 0.0 : 20.00;
+function calculateTotalSummary(uf){
+    const tax = uf === "SP" || uf === "RJ" || uf === "MG" || uf === "ES" ? 0.0 : 20.00;
     const totalBuy =  getSubTotal() + tax;
 
     document.getElementById("tax").textContent = Utils.formatMoney(tax);
@@ -89,19 +91,19 @@ document.addEventListener("DOMContentLoaded",()=>{
         const cep = document.getElementById("cep").value;
         if(cepIsValid(cep)){
             const data = await fetchCepValues(cep);
-            calculateTotalSummary(data.regiao);
+            calculateTotalSummary(data.uf);
         }
     });
 
     finalizeBuyBtn.addEventListener("click",()=>{
-        if(!formIsValid()) return; 
-        const loggedUser = localStorage.getItem("users");
+        if(!formIsValid()) return;
+        const loggedUser = localStorage.getItem("loggedUser");
         console.log(loggedUser);
         if (!loggedUser) {
             Utils.showMessage("Faça Login para continuar!", "error");
             setTimeout(() => {
                 window.location.href = "../html/login.html";
-            }, 100000);
+            }, 1000);
             return;
         }
 
