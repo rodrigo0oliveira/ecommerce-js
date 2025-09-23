@@ -28,9 +28,9 @@
                                 class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Início</a>
                             <a href="../html/home.html"
                                 class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Coleções</a>
-                            <a href="../html/login.html"
+                            <a id="login-link" href="../html/login.html"
                                 class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Login</a>
-                            <a href="../html/register.html"
+                            <a id="register-link" href="../html/register.html"
                                 class="px-3 py-2 text-sm text-gray-300 hover:bg-gray-100 hover:text-blue-950 rounded-md">Cadastro</a>
                         </div>
 
@@ -50,9 +50,9 @@
         <div class="w-full md:w-1/2 max-w-md flex flex-col justify-center items-center gap-4">
             <input id="cep" type="text" placeholder="Digite seu CEP"
                 class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <input id="number" type="text" placeholder="Rua"
+            <input id="street" type="text" placeholder="Rua"
                 class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <input id="street" type="text" placeholder="Número"
+            <input id="number" type="text" placeholder="Número"
                 class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
             <input id="city" type="text" placeholder="Cidade"
                 class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
@@ -88,6 +88,17 @@
         class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
         <p id="message-text">Mensagem aqui</p>
     </div>
+
+    <div id="purchase-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                <h2 class="text-xl font-bold mb-4">Resumo da Compra</h2>
+                <ul id="product-list" class="mb-4"></ul>
+                <p class="mb-2"><strong>Subtotal:</strong> <span id="modal-subtotal"></span></p>
+                <p class="mb-2"><strong>Frete:</strong> <span id="modal-tax"></span></p>
+                <p class="mb-4"><strong>Total:</strong> <span id="modal-total"></span></p>
+                <button id="close-modal" class="bg-green-500 text-white p-2 rounded w-full hover:bg-green-600">Confirmar e Continuar</button>
+            </div>
+    </div>
     <script type="module" src="../js/checkout/index.js"></script>
     <footer class="bg-black text-gray-300 py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
@@ -99,6 +110,8 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="../js/utils/botons.js"></script>
+
 </body>
 
 </body>

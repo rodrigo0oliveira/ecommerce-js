@@ -73,7 +73,7 @@ allProducts.push(
         id: 6,
         name: "Casual Nile",
         price: "399.00",
-        img: "../assets/images/shoes/casual-nile.png",
+        img: "../assets/images/shoes/canva-shoes.png",
         gender: "feminino",
         quantity: 12,
         description: "Estilo esportivo e versátil para o dia a dia. Fabricado em malha respirável com acabamento em borracha."
