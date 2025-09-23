@@ -57,6 +57,7 @@
                 return;
             }
 
+            localStorage.setItem("loggedUser", email);
             errorMsg.classList.add("hidden");
             window.Utils.showMessage("Login realizado com sucesso!", "success");
             setTimeout(() => {
