@@ -3,7 +3,12 @@ import Utils from "../utils/index.js";
 const subTotalSpan = document.getElementById("subtotal");
 const searchCepBtn = document.getElementById("search-cep");
 const finalizeBuyBtn = document.getElementById("finalize");
-
+const purchaseModal = document.getElementById("purchase-modal");
+const productList = document.getElementById("product-list");
+const modalSubtotal = document.getElementById("modal-subtotal");
+const modalTax = document.getElementById("modal-tax");
+const modalTotal = document.getElementById("modal-total");
+const closeModalBtn = document.getElementById("close-modal");
 
 function renderSubTotal(){
     subTotalSpan.textContent = Utils.formatMoney(getSubTotal());
@@ -85,6 +90,17 @@ function formIsValid() {
     return true;
 }
 
+function summary() {
+    const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    productList.innerHTML = cart.map(item => `<li class="mb-2">${item.name} - ${item.quantity}x - ${Utils.formatMoney(item.price * item.quantity)}</li>`).join('');
+    if (!cart.length) productList.innerHTML = '<li class="mb-2">Sem produtos</li>';
+
+    modalSubtotal.textContent = subTotalSpan.textContent;
+    modalTax.textContent = document.getElementById("tax").textContent;
+    modalTotal.textContent = document.getElementById("total").textContent;
+    purchaseModal.classList.remove("hidden");
+}
+
 
 document.addEventListener("DOMContentLoaded",()=>{
     searchCepBtn.addEventListener("click",async ()=>{
@@ -106,7 +122,12 @@ document.addEventListener("DOMContentLoaded",()=>{
             }, 1000);
             return;
         }
+        
+        summary();
+    });
 
+    closeModalBtn.addEventListener("click", () => {
+        purchaseModal.classList.add("hidden");
         localStorage.removeItem(CART_KEY);
         Utils.showMessage("Compra finalizada com sucesso!", "success");
         setTimeout(() => {

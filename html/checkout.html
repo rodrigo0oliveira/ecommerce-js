@@ -88,6 +88,17 @@
         class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 transition-opacity duration-300">
         <p id="message-text">Mensagem aqui</p>
     </div>
+
+    <div id="purchase-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                <h2 class="text-xl font-bold mb-4">Resumo da Compra</h2>
+                <ul id="product-list" class="mb-4"></ul>
+                <p class="mb-2"><strong>Subtotal:</strong> <span id="modal-subtotal"></span></p>
+                <p class="mb-2"><strong>Frete:</strong> <span id="modal-tax"></span></p>
+                <p class="mb-4"><strong>Total:</strong> <span id="modal-total"></span></p>
+                <button id="close-modal" class="bg-green-500 text-white p-2 rounded w-full hover:bg-green-600">Confirmar e Continuar</button>
+            </div>
+    </div>
     <script type="module" src="../js/checkout/index.js"></script>
     <footer class="bg-black text-gray-300 py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
