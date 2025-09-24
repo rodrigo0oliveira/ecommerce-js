@@ -1,4 +1,4 @@
-import { CART_KEY, getSubTotal } from "../cart/index.js";
+import { CART_KEY, getProducts, getSubTotal } from "../cart/index.js";
 import Utils from "../utils/index.js";
 const subTotalSpan = document.getElementById("subtotal");
 const searchCepBtn = document.getElementById("search-cep");
@@ -115,12 +115,19 @@ document.addEventListener("DOMContentLoaded",()=>{
     finalizeBuyBtn.addEventListener("click",()=>{
         if(!formIsValid()) return;
         const loggedUser = localStorage.getItem("loggedUser");
-        console.log(loggedUser);
+        const cartItens = getProducts();
         if (!loggedUser) {
             Utils.showMessage("Faça Login para continuar!", "error");
             setTimeout(() => {
                 window.location.href = "../html/login.html";
             }, 1000);
+            return;
+        }
+        if(!cartItens.length){
+            Utils.showMessage("Não há produtos em seu carrinho! Você será redirecionado para a página inicial.","error");
+            setTimeout(()=>{
+                window.location.href = "../html/home.html";
+            },1000);
             return;
         }
         

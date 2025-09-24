@@ -123,4 +123,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-export { addProductToCart,getSubTotal,CART_KEY };
+export { addProductToCart,getSubTotal,CART_KEY,getProducts };
