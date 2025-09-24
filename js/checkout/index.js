@@ -49,6 +49,9 @@ function cepIsValid(cep){
         Utils.showMessage("O número do CEP precisa ter 8 números e estar formatado (55790-000 ou 55790000)", "error");
         return false;
     }
+    const numberInput = document.getElementById("number");
+    console.log(numberInput);
+    numberInput.focus();
     return true;
 }
 
@@ -85,8 +88,6 @@ function formIsValid() {
         return false;
     }
 
-    const numberInput = document.getElementById("number");
-    numberInput.focus();
     return true;
 }
 
